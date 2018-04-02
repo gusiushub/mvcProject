@@ -8,11 +8,17 @@
 
 namespace app\core;
 
+use app\core\View;
+
+
 class Router {
 
     protected $routes = [];
     protected $params = [];
 
+    /**
+     * Router constructor.
+     */
     function __construct(){
         //echo'Это класс Router.php';
         $arr = require 'app/config/routes.php';
@@ -21,13 +27,20 @@ class Router {
         }
     }
 
-    // Ветвление
+    /**
+     * Ветвление
+     * @param $route
+     * @param $params
+     */
     public function add($route, $params){
         // echo '<p>'.$route.'</p>';
         $route = '#^'.$route.'$#';
         $this->routes[$route] = $params;
     }
 
+    /**
+     * @return bool
+     */
     public function math(){
         $url = trim($_SERVER['REQUEST_URI'], '/');
         //debug($url);
@@ -55,13 +68,13 @@ class Router {
                     $controller = new $path($this->params);
                     $controller->$action();
                 } else {
-                    echo 'Не найден action: '.$action;
+                    View::errorCode(404);
                 }
             } else {
-                echo 'Не найден controller: '.$path;
+                View::errorCode(404);
             }
         } else {
-            echo  'Маршрут не найден';
+            View::errorCode(404);
         }
     }
 }

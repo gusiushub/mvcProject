@@ -2,6 +2,7 @@
 
 namespace app\core;
 
+
 class View
 {
     public $path;
@@ -16,13 +17,32 @@ class View
 
     public function render($title, $vars = [])
     {
-        if (file_exists('app/views/' . $this->path . '.php')) {
-            ob_start();
-            require 'app/views/' . $this->path . '.php';
-            $content = ob_get_clean();
-            require 'app/views/layouts/' . $this->layout . '.php';
+        extract($vars);
+        $path = 'app/views/'.$this->path.'.php';
+        if (file_exists($path)) {
+            ob_start();// Включение буферизации вывода
+            require $path;
+            $content = ob_get_clean();// Получить содержимое текущего буфера и удалить его
+            require $path;
         } else{
             echo 'Вид'.$this->path.' не найден';
         }
     }
+
+    public function redirect($url)
+    {
+        header('Location: '.$url);
+    }
+
+    public static function errorCode($code)
+    {
+        http_response_code($code);
+        $path = 'app/views/errors/'.$code.'.php';
+        if(file_exists($path)) {
+            require $path;
+        }
+        exit;
+    }
+
+
 }

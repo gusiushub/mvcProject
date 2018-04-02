@@ -1,5 +1,12 @@
 MVC framework using a namespace
 ================================
+
+Installation
+--------------
+**The first step is cloning the base template
+git clone https://github.com/gusiushub/mvcProject.git** <br>
+**The minimum required PHP version of Yii is PHP 5.6.**
+
 Directory Structure
 ----------------------
 
