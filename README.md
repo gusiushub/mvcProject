@@ -1,6 +1,8 @@
 MVC framework using a namespace
 ================================
-###Directory Structure
+Directory Structure
+----------------------
+
 > _app/_
 >> _config/_  - contains application configurations<br>
 >> _controllers/_    -    contains Web controller classes<br>
