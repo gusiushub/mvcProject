@@ -8,11 +8,11 @@ Directory Structure
 >> _controllers/_    -    contains Web controller classes<br>
 >>_core/_<br>
  >>_lib_/<br>
->>_models/_  -   contains model classes
-<br>
->>_views/_   -  contains view files for the Web application
+>>_models/_  -   contains model classes<br>
+>>_views/_   -  contains view files for the Web application<br>
 >>> _account_/<br>
 >>> _layouts_/<br>
+>>>
 >._htaccess_<br>
 >_index.php_<br>
 >_public_/<br>
