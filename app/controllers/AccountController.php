@@ -6,13 +6,17 @@ use app\core\Controller;
 
 class AccountController extends Controller
 {
+    public function before()
+    {
+        $this->view->layout = 'custom';
+    }
     public function loginAction()
     {
-        echo 'sign in';
+        $this->view->render('Sign in');
     }
 
     public function registerAction()
     {
-        echo 'reg';
+        $this->view->render('Sign up');
     }
 }

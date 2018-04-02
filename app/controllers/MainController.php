@@ -8,7 +8,8 @@ class MainController extends Controller
 {
     public function indexAction()
     {
-        echo 'Home page';
+       $this->view->render('Home page');
+        //echo 'Home page';
     }
 
     public function contactAction()
