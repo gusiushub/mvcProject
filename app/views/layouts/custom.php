@@ -3,7 +3,7 @@
 <head>
     <title><?php echo $title; ?></title>
 </head>
-<body style = "background: #000;">
+<body style = "font-size:30px;">
     <?php echo $content; ?>
 </body>
 </html>
