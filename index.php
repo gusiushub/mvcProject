@@ -15,7 +15,6 @@ use app\lib\Db;
 
 // функция автозагрузки классов
 spl_autoload_register(function ($class) {
-    // include 'classes/' . $class . '.class.php';
     $path = str_replace('\\', '/', $class.'.php');
     if (file_exists($path)) {
         require $path;
@@ -23,10 +22,7 @@ spl_autoload_register(function ($class) {
 });
 
 session_start();
-
 $router = new Router;
-echo '</br>';
-
 $router->run();
 
 

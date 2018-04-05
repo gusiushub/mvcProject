@@ -8,6 +8,7 @@ class AccountController extends Controller
 {
     public function loginAction()
     {
+        //$this->view->redirect('/');
         $this->view->render('Sign in');
     }
 
@@ -15,4 +16,6 @@ class AccountController extends Controller
     {
         $this->view->render('Sign up');
     }
+
+
 }
