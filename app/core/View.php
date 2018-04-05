@@ -20,9 +20,11 @@ class View
         extract($vars);
         $path = 'app/views/'.$this->path.'.php';
         if (file_exists($path)) {
-            ob_start();// Включение буферизации вывода
+            // Включение буферизации вывода
+            ob_start();
             require $path;
-            $content = ob_get_clean();// Получить содержимое текущего буфера и удалить его
+            // Получить содержимое текущего буфера и удалить его
+            $content = ob_get_clean();
             require $path;
         } else{
             echo 'Вид'.$this->path.' не найден';
