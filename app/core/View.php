@@ -44,5 +44,16 @@ class View
         exit;
     }
 
+    public function message($status, $message)
+    {
+        exit(json_encode(['status'=>$status, 'message'=>$message]));
+    }
+
+    //редирект
+    public function location($url)
+    {
+        exit(json_encode(['url'=>$url]));
+    }
+
 
 }
