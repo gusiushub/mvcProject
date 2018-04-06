@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: zolow
- * Date: 02.04.2018
- * Time: 2:47
- */
+
 
 namespace app\core;
 

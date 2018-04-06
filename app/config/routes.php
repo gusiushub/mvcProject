@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: zolow
- * Date: 02.04.2018
- * Time: 3:20
- */
 
 // Маршруты
 return [
