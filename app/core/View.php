@@ -25,7 +25,8 @@ class View
             require $path;
             // Получить содержимое текущего буфера и удалить его
             $content = ob_get_clean();
-            require $path;
+
+            require 'app/views/layouts/'.$this->layout.'.php';
         } else{
             echo 'Вид'.$this->path.' не найден';
         }
